@@ -268,6 +268,14 @@ for iterationNumber = 1:NET.maxNumIterations
     end
     % If no new categories were added, and no inputs were reclassified in the current iteration
     % then we've reached equilibrium. Thus, we can stop training.
+
+    % If updating weights according to warped contours:
+    if compareWarped == 1
+        % Resample each category's weight to be the mean lengths of the contours in
+        % that category
+        NET.weight = ARTwarp_Average_Weights(NET.weight, [DATA.length], [DATA.category]);
+    end
+
     if numChanges == 0
         break;
     end  
