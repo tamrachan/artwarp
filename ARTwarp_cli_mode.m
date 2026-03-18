@@ -56,7 +56,7 @@ end
 % Optional argument to update weights according to warped contours, 1 =
 % update according to warped, 0 = update normally according to original.
 % Default is 0
-addOptional(p, 'compareWarped', 0, @(x) (x==0 || x==1) && isnumeric(x) && isscalar(x));
+addParameter(p, 'compareWarped', 0, @(x) (x==0 || x==1) && isnumeric(x) && isscalar(x));
 
 % Parse and validate the input arguments (folder paths given must be to
 % folders, file path given must be to a file)
@@ -108,6 +108,7 @@ fprintf('bias: %g\n', bias);
 fprintf('learningRate: %g\n', learningRate);
 fprintf('resample: %g\n', resample);
 fprintf('sampleInterval: %g\n', sampleInterval);
+fprintf('compareWarped: %d\n', compareWarped);
 fprintf('outputFolder: %s\n', outputFolder);
 drawnow; % forces MATLAB to flush output immediately
 % LOAD DATA FROM SPECIFIED INPUT FOLDER

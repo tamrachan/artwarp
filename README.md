@@ -61,6 +61,7 @@ Press **Enter** to use the default value.
 - **learningRate** (default: `0.1`) - must be between 0 and 1
 - **resample** (default: `1`) - `1 = yes`, `0 = no`
 - **sampleInterval** (default: `0.01` seconds) - must be a positive number
+- **compareWarped** (default: `0`) - `1 = yes`, `0 = no`
 
 All optional inputs are validated. Invalid entries will trigger a re-prompt.
 
@@ -119,6 +120,7 @@ maxNumCategories: <maximum number of categories>
 maxNumIterations: <maximum number of iterations>
 resample: 1
 sampleInterval: 0.01
+compareWarped: 1
 outputFolder: <output folder name>
 
 --- ITERATIONS ---
